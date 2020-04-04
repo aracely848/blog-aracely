@@ -1,0 +1,12 @@
+.main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 66%;
+  justify-content: space-around;
+  margin-left: 16%;
+  margin-right: 16%;
+  width: 68%;
+}
+
+

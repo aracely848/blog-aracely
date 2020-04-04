@@ -1,0 +1,25 @@
+.circle {
+  align-items: center;
+  background:  rgb(13, 13, 14);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  flex-direction: row-reverse;
+  height: 50px;
+  width: 50px;
+}
+
+.social-networks{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 20%;
+  justify-content: space-between;
+  width: 20%;
+}
+
+.size {
+  height: 14px;
+  margin-bottom: 0;
+  width: 14px;
+}

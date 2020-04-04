@@ -1,0 +1,19 @@
+.note{
+  align-items: center;
+  display: flex;
+  flex-direction: column; 
+  height: 37%;
+  width: 100%;
+}
+
+img {
+  height: 720px;
+  margin-bottom: 70px;
+  width: 100%;
+}
+
+button {
+  height: 50px;
+  width: 280px;
+}
+
