@@ -7,16 +7,6 @@
   width: 100%;  
 }
 
-.footer {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  font-family: 'Helvetica';
-  justify-content: space-around;
-  margin-bottom: 80px;
-  width: 100%;  
-}
-
 .footerGeneral {
   align-items: center;
   background-color: #fafafa;

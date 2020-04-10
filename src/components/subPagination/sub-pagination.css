@@ -1,0 +1,9 @@
+.sub-pagination {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Helvetica';
+  justify-content: space-around;
+  margin-bottom: 80px;
+  width: 100%;  
+}
