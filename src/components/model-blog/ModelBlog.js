@@ -3,12 +3,17 @@ import './model-blog.css';
 import SubPagination from '../subPagination/SubPagination';
 import InformationList from '../information-list/InformationList';
 import { Link } from 'react-router-dom';
-import api from '../topics.json.js';
+import { connect } from 'react-redux';
+import { showTopic } from '../../actions/index';
 
 class ModelBlog extends Component {
+  componentDidMount() {
+    this.props.dispatch(showTopic());
+  }
   render() {
+    const { topics } = this.props;
     const selected = Number(this.props.match.params.id);
-    const topic = api.topics.find(item => item.id === selected);
+    const topic = topics.find(item => item.id === selected);
       return (
         <React.Fragment>
           <div className="modelBlog">
@@ -49,4 +54,8 @@ class ModelBlog extends Component {
   }
 }
 
-export default ModelBlog;
+const mapStateToProps = state => ({
+  topics: state.topics
+});
+
+export default connect(mapStateToProps)(ModelBlog);

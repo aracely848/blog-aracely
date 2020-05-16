@@ -3,16 +3,22 @@ import './main.css';
 import InformationList from '../information-list/InformationList';
 import Note from '../note/Note';
 import Pagination from '../pagination/Pagination';
-import api from '../topics.json';
+import { connect } from 'react-redux';
+import { getAllTopics } from '../../actions/index';
 
-class Main extends Component {   
+class Main extends Component { 
+  componentDidMount() {
+    this.props.dispatch(getAllTopics());
+  }
  render() {
+  
+  const { topics } = this.props;
   
   return (
     <React.Fragment>
       <div className="main">
-        {api.topics.map((topic, id) => (
-          <div key={id}>
+        {topics.map((topic) => (
+          <div key={topic.id}>
             < InformationList title={topic.title}touristDestination={topic.destiny} author={topic.author} date={topic.date} /> 
             < Note images={topic.image} firstParagraph={topic.paragraph1} secondParagraph={topic.paragraph2} link={`/${topic.id}`} />
           </div>
@@ -21,8 +27,11 @@ class Main extends Component {
       <Pagination /> 
     </React.Fragment>    
   )
- }
- 
+ } 
 }
 
-export default Main;
+const mapStateToProps = state => ({
+  topics: state.topics
+});
+
+export default connect(mapStateToProps)(Main);
